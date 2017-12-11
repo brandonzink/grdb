@@ -140,6 +140,14 @@ cli_graph_component_sssp(char *cmdline, int *pos)
 	result = component_sssp(&c, v1, v2, &n, &total_weight, &path);
 	if (result < 0) {
 		/* Failure... */
+		printf("Dijkstra failure\n");
+	} else {
+		printf("Cost: %i\n", total_weight);
+		printf("Djikstra's Path: ");
+		for (int i = 0; i < n; i += 1){
+			printf("%llu ", path[i]);
+		}
+		printf("\n");
 	}
 }
 
